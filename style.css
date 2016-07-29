@@ -1,0 +1,11 @@
+body {
+  background-color: #b8c0dc;
+}
+header {
+  text-align: center;
+}
+section img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
