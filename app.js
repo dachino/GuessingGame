@@ -1,7 +1,9 @@
 var userName = prompt('What\'s your name?');
+console.log(userName, 'User\'s name');
 alert('Welcome to the site ' + userName + '!');
 
 var questionOne = prompt('Does Ray like to code? (Please answer with Y or N)').toUpperCase();
+console.log(questionOne, 'User question 1 input');
 if (questionOne === 'Y') {
   alert('You\'re right ' + userName + '! He loves whatever can get him the big bucks!');
 } else if (questionOne === 'N') {
@@ -11,6 +13,7 @@ if (questionOne === 'Y') {
 }
 
 var questionTwo = prompt('Is Ray over the age of 30? (Please answer with Y or N)').toUpperCase();
+console.log(questionTwo, 'User question 2 input');
 if (questionTwo === 'Y') {
   alert('You\'re right ' + userName + '! He\'s getting old!');
 } else if (questionTwo === 'N') {
@@ -20,6 +23,7 @@ if (questionTwo === 'Y') {
 }
 
 var questionThree = prompt('Does Ray like to drink IPA? (Please answer with Y or N)').toUpperCase();
+console.log(questionThree, 'User question 3 input');
 if (questionThree === 'N') {
   alert('You\'re right ' + userName + '! He likes any other beer except IPA.');
 } else if (questionThree === 'Y') {
@@ -29,6 +33,7 @@ if (questionThree === 'N') {
 }
 
 var questionFour = prompt('Is Ray able to breakdance? (Please answer with Y or N)').toUpperCase();
+console.log(questionFour, 'User question 4 input');
 if (questionFour === 'N') {
   alert('You\'re right ' + userName + '! He tried in high school but failed miserably!');
 } else if (questionFour === 'Y') {
@@ -38,13 +43,22 @@ if (questionFour === 'N') {
 }
 
 var questionFive = prompt('Does Ray like to eat chicken feet? (This time you can answer with Y or yes, and N or no.)').toUpperCase();
+console.log(questionFive, 'User question 5 input');
 if (questionFive === 'Y' || questionFive === 'YES') {
   alert('You\'re right ' + userName + '! He\'s Chinese and Chinese people can eat anything!');
 } else if (questionFive === 'N' || questionFive === 'NO') {
   alert('Wrong! Hint: He\'s Chinese...');
 } else {
-  alert('Sorry ' + userName + ', that\'s not a valid answer. Please enter either a Y or N.');
+  alert('Sorry ' + userName + ', that\'s not a valid answer. Please enter either a Y, yes, N, or no.');
 }
 
+var questionSixAnswer = ['AUDI', 'BMW'];
+var questionSix = prompt('What is one car brand that Ray likes?').toUpperCase();
+console.log(questionSix, 'User question 6 input');
+if (questionSix === (questionSixAnswer[0] || questionSixAnswer[1])) {
+  alert('You\'re right ' + userName + '! He loves those German cars!');
+} else {
+  alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
+}
 
 alert('Thank you ' + userName + ' for playing my guessing game!');
