@@ -55,7 +55,7 @@ if (questionFive === 'Y' || questionFive === 'YES') {
 var questionSixAnswer = ['AUDI', 'BMW'];
 var questionSix = prompt('What is one car brand that Ray likes?').toUpperCase();
 console.log(questionSix, 'User question 6 input');
-if (questionSix === (questionSixAnswer[0] || questionSixAnswer[1])) {
+if (questionSix === questionSixAnswer[0] || questionSix === questionSixAnswer[1]) {
   alert('You\'re right ' + userName + '! He loves those German cars!');
 } else {
   alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
