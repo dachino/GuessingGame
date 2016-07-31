@@ -1,11 +1,26 @@
 body {
   background-color: #b8c0dc;
+  border: 6px double rgb(72, 89, 139);
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 720px;
+  margin: 10px;
 }
+
 header {
   text-align: center;
+  font-family: Chalkduster;
+  color: rgb(55, 68, 107);
 }
+
 section img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+footer {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(55, 68, 107);
 }
