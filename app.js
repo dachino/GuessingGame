@@ -37,4 +37,14 @@ if (questionFour === 'N') {
   alert('Sorry ' + userName + ', that\'s not a valid answer. Please enter either a Y or N.');
 }
 
+var questionFive = prompt('Does Ray like to eat chicken feet? (This time you can answer with Y or yes, and N or no.)').toUpperCase();
+if (questionFive === 'Y' || questionFive === 'YES') {
+  alert('You\'re right ' + userName + '! He\'s Chinese and Chinese people can eat anything!');
+} else if (questionFive === 'N' || questionFive === 'NO') {
+  alert('Wrong! Hint: He\'s Chinese...');
+} else {
+  alert('Sorry ' + userName + ', that\'s not a valid answer. Please enter either a Y or N.');
+}
+
+
 alert('Thank you ' + userName + ' for playing my guessing game!');
