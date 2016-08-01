@@ -63,4 +63,22 @@ if (cars.indexOf(questionSix) >= 0) {
   alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
 }
 
+var pokemonNum = Math.floor((Math.random() * 100));
+console.log(pokemonNum, 'Number of Pokemon I have');
+var questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+console.log(questionSeven, 'User question 7 input');
+while (questionSeven !== pokemonNum) {
+  if (isNaN(questionSeven)) {
+    alert('Yo, that\'s not a number!');
+    questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+  } else if (questionSeven < pokemonNum) {
+    alert('Nope, I have more than that!');
+    questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+  } else if (questionSeven > pokemonNum) {
+    alert('Nope, I have less than that!');
+    questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+  }
+}
+alert('Good guess! You got it right!');
+
 alert('Thank you ' + userName + ' for playing my guessing game!');
