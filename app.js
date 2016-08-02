@@ -1,11 +1,13 @@
 var userName = prompt('What\'s your name?');
 console.log(userName, 'User\'s name');
 alert('Welcome to the site ' + userName + '!');
+var correct = 0; //Counter for correct answers
 
 var questionOne = prompt('Does Ray like to code? (Please answer with Y or N)').toUpperCase();
 console.log(questionOne, 'User question 1 input');
 if (questionOne === 'Y') {
   alert('You\'re right ' + userName + '! He loves whatever can get him the big bucks!');
+  correct ++;
 } else if (questionOne === 'N') {
   alert('Wrong! Who doesn\'t love to code!?');
 } else {
@@ -16,6 +18,7 @@ var questionTwo = prompt('Is Ray over the age of 30? (Please answer with Y or N)
 console.log(questionTwo, 'User question 2 input');
 if (questionTwo === 'Y') {
   alert('You\'re right ' + userName + '! He\'s getting old!');
+  correct ++;
 } else if (questionTwo === 'N') {
   alert('Wrong! But he\'ll take that as a compliment.');
 } else {
@@ -26,6 +29,7 @@ var questionThree = prompt('Does Ray like to drink IPA? (Please answer with Y or
 console.log(questionThree, 'User question 3 input');
 if (questionThree === 'N') {
   alert('You\'re right ' + userName + '! He likes any other beer except IPA.');
+  correct ++;
 } else if (questionThree === 'Y') {
   alert('Wrong! One day he\'ll grow up to be a man!');
 } else {
@@ -36,6 +40,7 @@ var questionFour = prompt('Is Ray able to breakdance? (Please answer with Y or N
 console.log(questionFour, 'User question 4 input');
 if (questionFour === 'N') {
   alert('You\'re right ' + userName + '! He tried in high school but failed miserably!');
+  correct ++;
 } else if (questionFour === 'Y') {
   alert('Wrong! Maybe if he quits Code Fellows and joins a breakdancing class!');
 } else {
@@ -46,6 +51,7 @@ var questionFive = prompt('Does Ray like to eat chicken feet? (This time you can
 console.log(questionFive, 'User question 5 input');
 if (questionFive === 'Y' || questionFive === 'YES') {
   alert('You\'re right ' + userName + '! He\'s Chinese and Chinese people can eat anything!');
+  correct ++;
 } else if (questionFive === 'N' || questionFive === 'NO') {
   alert('Wrong! Hint: He\'s Chinese...');
 } else {
@@ -59,6 +65,7 @@ console.log(questionSix, 'User question 6 input');
 if (cars.indexOf(questionSix) >= 0) {
   console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
   alert('You\'re right ' + userName + '! He loves those German cars!');
+  correct ++;
 } else {
   console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
   alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
@@ -90,25 +97,30 @@ while (questionSeven !== pokemonNum && chance > 1) {
     console.log(questionSeven, 'User question 7 input');
   }
 }
-
-if (chance > 1) {
+if (chance >= 1 && questionSeven === pokemonNum) {
   alert('Good guess! You got it right!');
+  correct ++;
 } else {
   alert('Sorry, you ran out of tries!');
 }
 
-var counchance = ['CANADA', 'MEXICO', 'JAPAN', 'CHINA', 'SOUTH KOREA', 'UNITED KINGDOM,', 'GERMANY'];
-console.log(counchance, 'Counchance I\'ve been to');
-var questionEight = prompt('Which counchance have I been to besides the US?').toUpperCase();
+var questionEightFlag = false; //Flag indicates if user gets one of the countries right
+var countries = ['CANADA', 'MEXICO', 'JAPAN', 'CHINA', 'SOUTH KOREA', 'UNITED KINGDOM', 'GERMANY'];
+console.log(countries, 'Countries I\'ve been to');
+var questionEight = prompt('Which countries have I been to besides the US?').toUpperCase();
 console.log(questionEight, 'User question 8 input');
-for (var i = 0; i < counchance.length; i++) {
-  if (counchance[i] === questionEight) {
-    console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
-    alert('You\'re right ' + userName + '! He loves those German cars!');
-  } else {
-    console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
-    alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
+for (var i = 0; i < countries.length; i++) {
+  if (countries[i] === questionEight) {
+    questionEightFlag = true;
+    break;
   }
 }
+if (questionEightFlag) {
+  alert('You\'re right ' + userName + '! ' + questionEight + ' is one of the countries!');
+  correct ++;
+} else {
+  alert('Sorry ' + userName + ', he\'s never been there before!');
+}
 
-alert('Thank you ' + userName + ' for playing my guessing game!');
+var score = Math.round((correct / 8) * 100);
+alert('Thank you ' + userName + ' for playing my guessing game! You got ' + correct + ' out of 8 questions correct or ' + score + '%!');
