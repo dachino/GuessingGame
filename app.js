@@ -53,13 +53,14 @@ if (questionFive === 'Y' || questionFive === 'YES') {
 }
 
 var cars = ['AUDI', 'BMW'];
+console.log(cars, 'Car brands I like');
 var questionSix = prompt('What is one car brand that Ray likes?').toUpperCase();
 console.log(questionSix, 'User question 6 input');
 if (cars.indexOf(questionSix) >= 0) {
-  console.log(cars.indexOf(questionSix), 'cars.indexOf()');
+  console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
   alert('You\'re right ' + userName + '! He loves those German cars!');
 } else {
-  console.log(cars.indexOf(questionSix), 'cars.indexOf()');
+  console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
   alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
 }
 
@@ -71,12 +72,15 @@ while (questionSeven !== pokemonNum) {
   if (isNaN(questionSeven)) {
     alert('Yo, that\'s not a number!');
     questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+    console.log(questionSeven, 'User question 7 input');
   } else if (questionSeven < pokemonNum) {
     alert('Nope, I have more than that!');
     questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+    console.log(questionSeven, 'User question 7 input');
   } else if (questionSeven > pokemonNum) {
     alert('Nope, I have less than that!');
     questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+    console.log(questionSeven, 'User question 7 input');
   }
 }
 alert('Good guess! You got it right!');
