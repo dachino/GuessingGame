@@ -66,23 +66,49 @@ if (cars.indexOf(questionSix) >= 0) {
 
 var pokemonNum = Math.floor((Math.random() * 100));
 console.log(pokemonNum, 'Number of Pokemon I have');
+var chance = 6; //Number of chances user gets to guess
 var questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
 console.log(questionSeven, 'User question 7 input');
-while (questionSeven !== pokemonNum) {
+while (questionSeven !== pokemonNum && chance > 1) {
   if (isNaN(questionSeven)) {
-    alert('Yo, that\'s not a number!');
+    chance--;
+    console.log(chance, 'Number of chances left');
+    alert('Yo, that\'s not a number! You now have ' + chance + ' chance(s) left!');
     questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
     console.log(questionSeven, 'User question 7 input');
   } else if (questionSeven < pokemonNum) {
-    alert('Nope, I have more than that!');
+    chance--;
+    console.log(chance, 'Number of chances left');
+    alert('Nope, I have more than that! You now have ' + chance + ' chance(s) left!');
     questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
     console.log(questionSeven, 'User question 7 input');
   } else if (questionSeven > pokemonNum) {
-    alert('Nope, I have less than that!');
+    chance--;
+    console.log(chance, 'Number of chances left');
+    alert('Nope, I have less than that! You now have ' + chance + ' chance(s) left!');
     questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
     console.log(questionSeven, 'User question 7 input');
   }
 }
-alert('Good guess! You got it right!');
+
+if (chance > 1) {
+  alert('Good guess! You got it right!');
+} else {
+  alert('Sorry, you ran out of tries!');
+}
+
+var counchance = ['CANADA', 'MEXICO', 'JAPAN', 'CHINA', 'SOUTH KOREA', 'UNITED KINGDOM,', 'GERMANY'];
+console.log(counchance, 'Counchance I\'ve been to');
+var questionEight = prompt('Which counchance have I been to besides the US?').toUpperCase();
+console.log(questionEight, 'User question 8 input');
+for (var i = 0; i < counchance.length; i++) {
+  if (counchance[i] === questionEight) {
+    console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
+    alert('You\'re right ' + userName + '! He loves those German cars!');
+  } else {
+    console.log(cars.indexOf(questionSix), 'cars.indexOf() value');
+    alert('Sorry ' + userName + ', ' + questionSix + ' is his least favorite brand!');
+  }
+}
 
 alert('Thank you ' + userName + ' for playing my guessing game!');
