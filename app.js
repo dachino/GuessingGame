@@ -83,56 +83,59 @@ function questionSixFunc() {
   }
 }
 
-
-var pokemonNum = Math.floor((Math.random() * 100));
-console.log(pokemonNum, 'Number of Pokemon I have');
-var chance = 6; //Number of chances user gets to guess
-var questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
-console.log(questionSeven, 'User question 7 input');
-while (questionSeven !== pokemonNum && chance > 1) {
-  if (isNaN(questionSeven)) {
-    chance--;
-    console.log(chance, 'Number of chances left');
-    alert('Yo, that\'s not a number! You now have ' + chance + ' chance(s) left!');
-    questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
-    console.log(questionSeven, 'User question 7 input');
-  } else if (questionSeven < pokemonNum) {
-    chance--;
-    console.log(chance, 'Number of chances left');
-    alert('Nope, I have more than that! You now have ' + chance + ' chance(s) left!');
-    questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
-    console.log(questionSeven, 'User question 7 input');
-  } else if (questionSeven > pokemonNum) {
-    chance--;
-    console.log(chance, 'Number of chances left');
-    alert('Nope, I have less than that! You now have ' + chance + ' chance(s) left!');
-    questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
-    console.log(questionSeven, 'User question 7 input');
+function questionSevenFunc() {
+  var pokemonNum = Math.floor((Math.random() * 100));
+  console.log(pokemonNum, 'Number of Pokemon I have');
+  var chance = 6; //Number of chances user gets to guess
+  var questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+  console.log(questionSeven, 'User question 7 input');
+  while (questionSeven !== pokemonNum && chance > 1) {
+    if (isNaN(questionSeven)) {
+      chance--;
+      console.log(chance, 'Number of chances left');
+      alert('Yo, that\'s not a number! You now have ' + chance + ' chance(s) left!');
+      questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+      console.log(questionSeven, 'User question 7 input');
+    } else if (questionSeven < pokemonNum) {
+      chance--;
+      console.log(chance, 'Number of chances left');
+      alert('Nope, I have more than that! You now have ' + chance + ' chance(s) left!');
+      questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+      console.log(questionSeven, 'User question 7 input');
+    } else if (questionSeven > pokemonNum) {
+      chance--;
+      console.log(chance, 'Number of chances left');
+      alert('Nope, I have less than that! You now have ' + chance + ' chance(s) left!');
+      questionSeven = parseInt(prompt('How many Pokemon do I have? (Pick a value between 0 to 100)'));
+      console.log(questionSeven, 'User question 7 input');
+    }
+  }
+  if (chance >= 1 && questionSeven === pokemonNum) {
+    alert('Good guess! You got it right!');
+    correct ++;
+  } else {
+    alert('Sorry, you ran out of tries!');
   }
 }
-if (chance >= 1 && questionSeven === pokemonNum) {
-  alert('Good guess! You got it right!');
-  correct ++;
-} else {
-  alert('Sorry, you ran out of tries!');
-}
 
-var questionEightFlag = false; //Flag indicates if user gets one of the countries right
-var countries = ['CANADA', 'MEXICO', 'JAPAN', 'CHINA', 'SOUTH KOREA', 'UNITED KINGDOM', 'GERMANY'];
-console.log(countries, 'Countries I\'ve been to');
-var questionEight = prompt('Which countries have I been to besides the US?').toUpperCase();
-console.log(questionEight, 'User question 8 input');
-for (var i = 0; i < countries.length; i++) {
-  if (countries[i] === questionEight) {
-    questionEightFlag = true;
-    break;
+function questionEightFunc() {
+  var questionEightFlag = false; //Flag indicates if user gets one of the countries right
+  var countries = ['CANADA', 'MEXICO', 'JAPAN', 'CHINA', 'SOUTH KOREA', 'UNITED KINGDOM', 'GERMANY'];
+  console.log(countries, 'Countries I\'ve been to');
+  var questionEight = prompt('Which countries have I been to besides the US?').toUpperCase();
+  console.log(questionEight, 'User question 8 input');
+  for (var i = 0; i < countries.length; i++) {
+    if (countries[i] === questionEight) {
+      questionEightFlag = true;
+      break;
+    }
   }
-}
-if (questionEightFlag) {
-  alert('You\'re right ' + userName + '! ' + questionEight + ' is one of the countries!');
-  correct ++;
-} else {
-  alert('Sorry ' + userName + ', he\'s never been there before!');
+  if (questionEightFlag) {
+    alert('You\'re right ' + userName + '! ' + questionEight + ' is one of the countries!');
+    correct ++;
+  } else {
+    alert('Sorry ' + userName + ', he\'s never been there before!');
+  }
 }
 
 questionOneFunc();
