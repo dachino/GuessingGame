@@ -7,7 +7,7 @@ function userNameQuestion() {
   alert('Welcome to the site ' + userName + '!');
 }
 
-function questionOneFunc() {
+function questionOne() {
   var userInputOne = prompt('Does Ray like to code? (Please answer with Y or N)').toUpperCase();
   console.log(userInputOne, 'User question 1 input');
   if (userInputOne === 'Y') {
@@ -20,7 +20,7 @@ function questionOneFunc() {
   }
 }
 
-function questionTwoFunc() {
+function questionTwo() {
   var userInputTwo = prompt('Is Ray over the age of 30? (Please answer with Y or N)').toUpperCase();
   console.log(userInputTwo, 'User question 2 input');
   if (userInputTwo === 'Y') {
@@ -33,7 +33,7 @@ function questionTwoFunc() {
   }
 }
 
-function questionThreeFunc() {
+function questionThree() {
   var userInputThree = prompt('Does Ray like to drink IPA? (Please answer with Y or N)').toUpperCase();
   console.log(userInputThree, 'User question 3 input');
   if (userInputThree === 'N') {
@@ -46,7 +46,7 @@ function questionThreeFunc() {
   }
 }
 
-function questionFourFunc() {
+function questionFour() {
   var userInputFour = prompt('Is Ray able to breakdance? (Please answer with Y or N)').toUpperCase();
   console.log(userInputFour, 'User question 4 input');
   if (userInputFour === 'N') {
@@ -59,7 +59,7 @@ function questionFourFunc() {
   }
 }
 
-function questionFiveFunc() {
+function questionFive() {
   var userInputFive = prompt('Does Ray like to eat chicken feet? (This time you can answer with Y or yes, and N or no.)').toUpperCase();
   console.log(userInputFive, 'User question 5 input');
   if (userInputFive === 'Y' || userInputFive === 'YES') {
@@ -72,7 +72,7 @@ function questionFiveFunc() {
   }
 }
 
-function questionSixFunc() {
+function questionSix() {
   var cars = ['AUDI', 'BMW'];
   console.log(cars, 'Car brands I like');
   var userInputSix = prompt('What is one car brand that Ray likes?').toUpperCase();
@@ -87,7 +87,7 @@ function questionSixFunc() {
   }
 }
 
-function questionSevenFunc() {
+function questionSeven() {
   var pokemonNum = Math.floor((Math.random() * 100));
   console.log(pokemonNum, 'Number of Pokemon I have');
   var chance = 6; //Number of chances user gets to guess
@@ -122,7 +122,7 @@ function questionSevenFunc() {
   }
 }
 
-function questionEightFunc() {
+function questionEight() {
   var questionEightFlag = false; //Flag indicates if user gets one of the countries right
   var countries = ['CANADA', 'MEXICO', 'JAPAN', 'CHINA', 'SOUTH KOREA', 'UNITED KINGDOM', 'GERMANY'];
   console.log(countries, 'Countries I\'ve been to');
@@ -149,12 +149,12 @@ function finalAlert() {
 
 //Calling all the functions
 userNameQuestion();
-questionOneFunc();
-questionTwoFunc();
-questionThreeFunc();
-questionFourFunc();
-questionFiveFunc();
-questionSixFunc();
-questionSevenFunc();
-questionEightFunc();
+questionOne();
+questionTwo();
+questionThree();
+questionFour();
+questionFive();
+questionSix();
+questionSeven();
+questionEight();
 finalAlert();
