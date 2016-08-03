@@ -1,7 +1,11 @@
-var userName = prompt('What\'s your name?');
-console.log(userName, 'User\'s name');
-alert('Welcome to the site ' + userName + '!');
 var correct = 0; //Counter for correct answers
+var userName; //User's name
+
+function userNameQuestion() {
+  userName = prompt('What\'s your name?');
+  console.log(userName, 'User\'s name');
+  alert('Welcome to the site ' + userName + '!');
+}
 
 function questionOneFunc() {
   var userInputOne = prompt('Does Ray like to code? (Please answer with Y or N)').toUpperCase();
@@ -138,6 +142,13 @@ function questionEightFunc() {
   }
 }
 
+function finalAlert() {
+  var score = Math.round((correct / 8) * 100);
+  alert('Thank you ' + userName + ' for playing my guessing game! You got ' + correct + ' out of 8 questions correct or ' + score + '%!');
+}
+
+//Calling all the functions
+userNameQuestion();
 questionOneFunc();
 questionTwoFunc();
 questionThreeFunc();
@@ -146,7 +157,4 @@ questionFiveFunc();
 questionSixFunc();
 questionSevenFunc();
 questionEightFunc();
-
-
-var score = Math.round((correct / 8) * 100);
-alert('Thank you ' + userName + ' for playing my guessing game! You got ' + correct + ' out of 8 questions correct or ' + score + '%!');
+finalAlert();
