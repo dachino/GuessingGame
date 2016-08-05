@@ -1,7 +1,8 @@
 var correct = 0; //Counter for correct answers
-var userName = prompt('What\'s your name?');
+var userName; //User's name
 
 function userQuestion(){
+  userName = prompt('What\'s your name?');
   console.log(userName, 'User\'s name');
   alert('Welcome to the site ' + userName + '!');
 }
